@@ -13,7 +13,7 @@
 #ATTENTON: modify following names and paths as required
 PROJECT_NAME := nrf51_dfu
 NRFJPROG_PATH := ./tools/
-SDK_PATH := /opt/nRF5_SDK_11.0.0_89a8197
+SDK_PATH := ../nrf51_sdk_dependencies
 LINKER_SCRIPT := gcc_nrf51_dfu.ld
 GNU_INSTALL_ROOT := /home/marco/ARMToolchain/gcc-arm-none-eabi-4_9-2015q2
 GNU_VERSION := 4.9.3
@@ -66,6 +66,7 @@ $(abspath $(SDK_COMPONENTS_PATH)/libraries/bootloader_dfu/bootloader.c) \
 $(abspath $(SDK_COMPONENTS_PATH)s/libraries/bootloader_dfu/bootloader_settings.c) \
 $(abspath $(SDK_COMPONENTS_PATH)/libraries/bootloader_dfu/bootloader_util.c) \
 $(abspath $(SDK_COMPONENTS_PATH)/libraries/crc16/crc16.c) \
+$(abspath $(SDK_COMPONENTS_PATH)/drivers_nrf/wdt/nrf_drv_wdt.c) \
 $(abspath $(SDK_COMPONENTS_PATH)/libraries/bootloader_dfu/dfu_dual_bank.c) \
 $(abspath $(SDK_COMPONENTS_PATH)/libraries/bootloader_dfu/dfu_init_template.c) \
 $(abspath $(SDK_COMPONENTS_PATH)/libraries/bootloader_dfu/dfu_transport_ble.c) \
@@ -97,6 +98,7 @@ INC_PATHS += -I$(abspath $(SDK_COMPONENTS_PATH)/drivers_nrf/pstorage)
 INC_PATHS += -I$(abspath $(SDK_COMPONENTS_PATH)/libraries/bootloader_dfu/ble_transport)
 INC_PATHS += -I$(abspath $(SDK_COMPONENTS_PATH)/softdevice/common/softdevice_handler)
 INC_PATHS += -I$(abspath $(SDK_COMPONENTS_PATH)/device)
+INC_PATHS += -I$(abspath $(SDK_COMPONENTS_PATH)/drivers_nrf/wdt)
 INC_PATHS += -I$(abspath $(SDK_COMPONENTS_PATH)/libraries/hci)
 INC_PATHS += -I$(abspath $(SDK_COMPONENTS_PATH)/toolchain/CMSIS/Include)
 INC_PATHS += -I$(abspath $(SDK_COMPONENTS_PATH)/drivers_nrf/delay)
